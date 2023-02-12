@@ -13,7 +13,7 @@ public class Producto {
 	//METODO Producto
 	
 	public Producto(String name, double precio, int amount) {
-		
+		//Esto esta hecho para que el nombre de los productos esten en mayusculas
 		this.nombre = name.toUpperCase();
 		//Calculo para redondear los precios de producto1
 		BigDecimal precioCortado = new BigDecimal(precio).setScale(2, RoundingMode.DOWN);
@@ -25,7 +25,7 @@ public class Producto {
 	//METODO Producto2
 	
 	public void Producto2 (String name, double precio, int amount) {
-		
+		//Esto esta hecho para que el nombre de los productos esten en mayusculas
 		this.nombre = name.toUpperCase();
 		//Calculo para redondear los precios de producto2
 		BigDecimal precioCortado = new BigDecimal(precio).setScale(2, RoundingMode.DOWN);
@@ -37,6 +37,7 @@ public class Producto {
 	
 	public Producto nuevoproducto (Producto nuevoproducto) {
 		Scanner sc = new Scanner (System.in);
+		//En este metodo declaramos el nombre, precio, cantidad de los productos y nos muestra los datos del producto
 		System.out.println("Introduzca el nombre del producto:");
 		String nombreproducto = sc.nextLine();
 		nuevoproducto.setNombre(nombreproducto);
@@ -44,9 +45,11 @@ public class Producto {
 		double precioproducto = sc.nextDouble();
 		nuevoproducto.setPrecio(precioproducto);
 		System.out.println("");
+		System.out.println("Introduzca la cantidad de stock disponible");
+		int cantidad = sc.nextInt();
+		nuevoproducto.setCantidad(cantidad);
 		System.out.println("##### DATOS PRODUCTO #####");
-		System.out.println("Nombre: " + nuevoproducto.getNombre() +" Precio: "+ nuevoproducto.getPrecio()+ "\n");
-		sc.close();
+		System.out.println("Nombre: " + nuevoproducto.getNombre() +" Precio: "+ nuevoproducto.getPrecio()+ "\n" + "Stock:" + nuevoproducto.getCantidad());
 		return nuevoproducto;
 	}
 	

@@ -31,7 +31,7 @@ public class Cliente {
 		System.out.println("Introduzca su apellido");
 		String apellido = sc.next();
 		nuevocliente.setApellidos(apellido);
-		//Verificacion del numero
+		//Verificacion del numero, solo acepta numeros de telefono que tengan un tamaño de 9 digitos y que inicie por 7, 6, 8 y 9
 		boolean Numero = false;
 		while (!Numero) {
 		System.out.println("Introduzca su telefono");

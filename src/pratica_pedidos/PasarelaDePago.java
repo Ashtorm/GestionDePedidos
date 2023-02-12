@@ -15,11 +15,13 @@ public class PasarelaDePago {
 		Scanner sc = new Scanner (System.in);
 		float cuenta1 = (float) importeTotal.getImporteTotal();
 		System.out.println("El metodo seleccionado fue en EFECTIVO.");
+		//Si el pago es suficiente para pagar el producto comprado te permitira realizar el pago
 		System.out.println("Escriba el pago");
 		float pago =sc.nextFloat();
 			if (cuenta1>pago) {
 				System.out.println("Rechazado no dispones de suficiente credito");
 			} else {
+				//Aqui hace los calculos necesarios y divisiones necesarias para separar el dinero en billetes como maximo billetes de 50
 				float cambio = pago - cuenta1;
 				int cambio_euros = (int)cambio;
 				cambio = cambio-cambio_euros;
@@ -84,6 +86,8 @@ public class PasarelaDePago {
 		System.out.println("El metodo seleccionado fue TARJETA.");
 		System.out.println("Ahora por favor escribe tu tarjeta.");
 		sc.nextLine();
+		
+		//Este metodo esta hecho para que solo admita tarjetas que empiezen por el digito 4, 3 o 5  y con un tamaño de 16 o 15 digitos y cataloga la tarjeta dependiendo de que sea
 		String tarjeta =sc.nextLine();
 		String tarjeta2=tarjeta.replace(" ","");
 			if(tarjeta2.startsWith("4") && tarjeta2.length() == 16) {
