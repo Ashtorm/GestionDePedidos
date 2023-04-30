@@ -5,7 +5,7 @@ import java.io.ObjectOutputStream;
 public class IngresaFichero {
 	//Funcionalidad de escritura de clientes en txt
 	public static void LectorFichero(Cliente Cliente1, Cliente Cliente2, Cliente Cliente3) throws IOException {
-	FileOutputStream fos=new FileOutputStream("C:/Users/aleja/Desktop/Escritura_Eclipse.txt");
+	FileOutputStream fos=new FileOutputStream("Cliente.txt");
 	ObjectOutputStream oos=new ObjectOutputStream(fos);
 	oos.writeObject(Cliente1);
 	oos.writeObject(Cliente2);
