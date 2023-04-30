@@ -13,9 +13,7 @@ public class Pedido {
 	boolean pagado;
 	boolean entregado;
 
-	
-	public Pedido() {
-		
+	public Pedido() {		
 	}
 	
 	public void AgregarProducto1 (Producto P1, Producto P2, Producto P3, Producto P4, Producto P5, Pedido Pedido1) {

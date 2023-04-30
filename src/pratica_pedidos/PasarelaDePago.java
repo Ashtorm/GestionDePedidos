@@ -8,7 +8,6 @@ public class PasarelaDePago {
 	String tarjeta;
 	String cuenta;
 	
-	
 	//METODO PagoEfectivo
 
 	public void PagoEfectivo (Pedido importeTotal, PasarelaDePago Efectivo1) {
