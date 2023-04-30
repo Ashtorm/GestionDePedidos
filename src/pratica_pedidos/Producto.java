@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class Producto {
-
+	Scanner sc = new Scanner (System.in);
 	String nombre;
 	double precio;
 	int cantidad;
@@ -35,18 +35,15 @@ public class Producto {
 	}
 	
 	
-	public Producto nuevoproducto (Producto nuevoproducto) {
-		Scanner sc = new Scanner (System.in);
+	public Producto nuevoproducto (Producto nuevoproducto, Scanner sc) {
+		//Scanner sc = new Scanner (System.in);
 		System.out.println("Introduzca el nombre del producto:");
-		String nombreproducto = sc.nextLine();
-		nuevoproducto.setNombre(nombreproducto);
+		nuevoproducto.setNombre(sc.next());
 		System.out.println("Introduzca el precio del producto:");
-		double precioproducto = sc.nextDouble();
-		nuevoproducto.setPrecio(precioproducto);
+		nuevoproducto.setPrecio(sc.nextDouble());
 		System.out.println("");
 		System.out.println("##### DATOS PRODUCTO #####");
 		System.out.println("Nombre: " + nuevoproducto.getNombre() +" Precio: "+ nuevoproducto.getPrecio()+ "\n");
-		sc.close();
 		return nuevoproducto;
 	}
 	

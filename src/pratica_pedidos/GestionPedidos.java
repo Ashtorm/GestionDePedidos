@@ -1,14 +1,17 @@
 package pratica_pedidos;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class GestionPedidos {
+public class GestionPedidos implements Serializable {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
-		Cliente Cliente1 = new Cliente(null, null, "633567880", "A1", "", "");
-		Cliente Cliente2 = new Cliente(null, null, "633567880", "A2", "", "");
-		Cliente Cliente3 = new Cliente(null, null, "633567880", "A3", "", "");
+		
+		Cliente Cliente1 = new Cliente("A", "A", "633567880", "A1", "A", "A");
+		Cliente Cliente2 = new Cliente("A", "A", "633567880", "A2", "A", "A");
+		Cliente Cliente3 = new Cliente("A", "A", "633567880", "A3", "A", "A");
 		
 		Producto Producto1 = new Producto("A", 1, 1);
 		Producto Producto2 = new Producto("A", 1, 1);
@@ -23,8 +26,7 @@ public class GestionPedidos {
 		PasarelaDePago Tarjeta1 = new PasarelaDePago();
 		
 		//String name, String ape, String phone, String direction, String histo, Date Alta
-		System.out.println("##### MENU INICIAL #####\r\n1.Crear clientes\r\n2.Crear productos");
-		System.out.println("");
+		System.out.println("##### MENU INICIAL #####\r\n1.Crear clientes\r\n2.Crear productos\r\n");
 		
 		int i;
 		ArrayList<Cliente> al=new ArrayList<Cliente>();
@@ -34,11 +36,15 @@ public class GestionPedidos {
 		for (i = 0; i < al.size(); i++) {
 			System.out.println("Introduzca los datos del cliente " + (i + 1));
 			al.get(i).crearCliente(al.get(i));
-			
+		}
+		try {
+			IngresaFichero.LectorFichero(Cliente1, Cliente2, Cliente3);
+		} catch (IOException e) {
+			// TODO Bloque catch generado automáticamente
+			e.printStackTrace();
 		}
 		
-		//Creacion de productos los 5 productos empezando por el producto1
-			
+		//Creacion de productos los 5 productos empezando por el producto1, aqui lo que hace este array es repasar del producto 1 al 5 sin necesidad de llamarlos 1 por 1	
 		System.out.println("Ahora se solicitara la creacion de 5 productos.\n");
 
 		ArrayList<Producto> alpro=new ArrayList<Producto>();
@@ -49,7 +55,7 @@ public class GestionPedidos {
 		alpro.add(Producto5);
 		for (i = 0; i < alpro.size(); i++) {
 			System.out.println("Introduzca los datos del producto " + (i + 1));
-			alpro.get(i).nuevoproducto(alpro.get(i));
+			alpro.get(i).nuevoproducto(alpro.get(i),sc);
 			
 		}
 		

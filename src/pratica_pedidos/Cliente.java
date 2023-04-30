@@ -2,7 +2,7 @@ package pratica_pedidos;
 
 import java.util.Scanner;
 
-public class Cliente {
+public class Cliente{
 	
 	String nombre;
 	String apellidos;
@@ -26,11 +26,9 @@ public class Cliente {
 		//Metodo de creacion del cliente
 		Scanner sc = new Scanner (System.in);
 		System.out.println("Introduzca el nombre del cliente");
-		String nombre = sc.next();
-		nuevocliente.setNombre(nombre);
+		nuevocliente.setNombre(sc.next());
 		System.out.println("Introduzca su apellido");
-		String apellido = sc.next();
-		nuevocliente.setApellidos(apellido);
+		nuevocliente.setApellidos(sc.next());
 		//Verificacion del numero
 		boolean Numero = false;
 		while (!Numero) {
@@ -54,8 +52,7 @@ public class Cliente {
 		}
 		
 		System.out.println("Introduzca su direccion actual");
-		String calle = sc.next();
-		nuevocliente.setDireccion(calle);
+		nuevocliente.setDireccion(sc.next());
 		//Muestra de datos del cliente
 		System.out.println("##### DATOS CLIENTE #####");
 		System.out.println("Nombre: " + nuevocliente.getNombre()+" Apellido: "+ nuevocliente.getApellidos()+"\r\nTelefono: "+nuevocliente.getTelefono()+" Direccion: "+nuevocliente.getDireccion() + "\n");
